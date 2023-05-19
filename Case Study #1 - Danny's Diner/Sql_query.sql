@@ -6,6 +6,7 @@
 
 -- 1. What is the total amount each customer spent at the restaurant?
 
+
 SELECT 
 	S.CUSTOMER_ID AS C_ID,
 	SUM(M.PRICE) AS TOTAL_SPENT
