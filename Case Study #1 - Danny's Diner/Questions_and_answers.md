@@ -1,4 +1,4 @@
-1.What is the total amount each customer spent at the restaurant?
+1. What is the total amount each customer spent at the restaurant?
 
 ```
 SELECT
@@ -16,9 +16,7 @@ ORDER BY total_amount DESC
 |   B | 74    |
 | C | 36    |
 
-
-
-2.How many days has each customer visited the restaurant?
+2. How many days has each customer visited the restaurant?
 
 ```
 SELECT
@@ -35,7 +33,7 @@ ORDER BY amount_of_days DESC
 |   A | 4    |
 | C | 2    |
 
-3.What was the first item from the menu purchased by each customer?
+3. What was the first item from the menu purchased by each customer?
 
 ```
 WITH t1 AS
@@ -87,7 +85,7 @@ WHERE amount = (SELECT MAX(amount) FROM t1)
 |:----------|:----------|
 |    ramen | 8 |
 
-5.Which item was the most popular for each customer?
+5. Which item was the most popular for each customer?
 
 ```
 WITH t1 AS
@@ -115,7 +113,8 @@ WHERE rang = 1
 | B        | sushi        |   
 | B        | curry        |   
 | B        | ramen        |   
-| C        | ramen  
+| C        | ramen        |
+
 6. Which item was purchased first by the customer after they became a member?
 ```
 WITH t1 AS
@@ -145,6 +144,7 @@ WHERE rang =1
 |----------|--------------|
 | A        | curry        |
 | B        | sushi        |
+
 7. Which item was purchased just before the customer became a member?
 
 ```
@@ -176,6 +176,7 @@ WHERE rang =1
 | A        | sushi        |
 | A        | curry        |
 | B        | sushi        |
+
 8. What is the total items and amount spent for each member before they became a member?
 
 ```
@@ -221,7 +222,7 @@ GROUP BY customer_id
 | A        | 860 |
 | B        | 940 |
 
-10 In the first week after a customer joins the program 
+10. In the first week after a customer joins the program 
 (including their join date)they earn 2x points on all items, not just sushi 
 how many points do customer A and B have at the end of January?
 
@@ -289,7 +290,7 @@ LEFT JOIN members USING(customer_id)
 | C        | 2021-01-01 | ramen        | 12    | N      |
 | C        | 2021-01-07 | ramen        | 12    | N      |
 
-12 Danny also requires further information about the ranking of customer products, 
+12. Danny also requires further information about the ranking of customer products, 
 but he purposely does not need the ranking for non-member purchases so he expects 
 null ranking values for the records when customers are not yet part of the loyalty program.
 
